@@ -24,15 +24,19 @@ TaskSequence.prototype.run = function () {
 
 TaskSequence.prototype.next = function () {
 	if (this.currentIndex == this.tasks.length) {
-		return this.end();
+		return this._end();
 	}
 
-	var taskWillComplete = this.tasks[this.currentIndex].run();
+	var taskWillComplete = this.tasks[this.currentIndex]._run();
 	this.currentIndex++;
 	taskWillComplete.then(this.next.bind(this));
 };
 
-TaskSequence.prototype.end = function () {
+TaskSequence.prototype._end = function () {
+	this.end(this.deferred);
+};
+
+TaskSequence.prototype.end = function (deferred) {
 	console.log('task sequence ended', this);
-	this.deferred.resolve();
+	deferred.resolve();
 };

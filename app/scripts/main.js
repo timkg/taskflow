@@ -1,3 +1,4 @@
+/*
 var taskSequence1 = new TaskSequence('one');
 taskSequence1.add(new Task(1));
 taskSequence1.add(new Task(2));
@@ -15,3 +16,6 @@ taskSequence2.add(taskSequence3);
 taskSequence1.add(taskSequence2);
 
 taskSequence1.run();
+*/
+
+var slide = new ShowSlide([1, 2, 3]);

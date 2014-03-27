@@ -4,7 +4,7 @@ function ShowTask (item) {
 
 ShowTask.prototype = new Task();
 
-ShowTask.prototype.run = function () {
-	setTimeout(this.deferred.resolve, 100);
-	return this.deferred.promise;
+ShowTask.prototype.run = function (deferred) {
+	var btn = $('<p></p>').text(this.item).appendTo(document.body);
+	setTimeout(deferred.resolve, 500);
 };
