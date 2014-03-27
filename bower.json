@@ -1,0 +1,9 @@
+{
+  "name": "refactoring",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "q": "~2.0.0"
+  },
+  "devDependencies": {}
+}
